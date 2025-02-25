@@ -5,9 +5,11 @@ import { escapeSvelte } from 'mdsvex'
 import { join, parse } from 'node:path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
+import rehypeKatex from 'rehype-katex-svelte'
 import rehypeSlug from 'rehype-slug'
 import remarkFFF from 'remark-fff'
 import remarkFootnotes from 'remark-footnotes'
+import remarkMath from 'remark-math'
 import { createShikiHighlighter, renderCodeToHTML, runTwoSlash } from 'shiki-twoslash'
 import { visit } from 'unist-util-visit'
 
@@ -60,7 +62,7 @@ export default {
         fence = parseFence(lex([lang, meta].filter(Boolean).join(' ')))
       }
       catch (error) {
-        throw new Error(`Could not parse the codefence for this code sample \n${code}`)
+        throw new Error(`Could not parse the codefence for this code sample \n${code}. ${error}`)
       }
       if (fence?.twoslash === true)
         twoslash = runTwoSlash(code, lang)
@@ -89,6 +91,7 @@ export default {
         target: '_blank',
       },
     ],
+    rehypeKatex,
   ],
   remarkPlugins: [
     [
@@ -111,6 +114,7 @@ export default {
     remarkUraraFm,
     remarkUraraSpoiler,
     [remarkFootnotes, { inlineNotes: true }],
+    remarkMath,
   ],
   smartypants: {
     dashes: 'oldschool',
