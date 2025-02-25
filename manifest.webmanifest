@@ -1,6 +1,6 @@
 {
   "background_color": "#3D4451",
-  "description": "Powered by SvelteKit/Urara",
+  "description": "Template by SvelteKit/Urara",
   "display": "standalone",
   "icons": [
     {
@@ -30,10 +30,10 @@
   ],
   "id": "https://urara-demo.netlify.app/",
   "lang": "en-US",
-  "name": "Urara",
+  "name": "Andrew Boldi",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "Urara",
+  "short_name": "Andrew Boldi",
   "start_url": "/",
   "theme_color": "#3D4451"
 }
