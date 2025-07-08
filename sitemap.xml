@@ -11,8 +11,23 @@
     </url>
     
         <url>
+            <loc>https://urara-demo.netlify.app/LRP1</loc>
+            <lastmod>2025-07-08T04:51:13.406Z</lastmod>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://urara-demo.netlify.app/bayesianthinking</loc>
+            <lastmod>2025-07-08T04:51:13.408Z</lastmod>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://urara-demo.netlify.app/sn</loc>
+            <lastmod>2025-07-08T04:51:13.408Z</lastmod>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://urara-demo.netlify.app/compchem1</loc>
-            <lastmod>2025-02-25T23:14:52.318Z</lastmod>
+            <lastmod>2025-07-08T04:51:13.408Z</lastmod>
             <priority>0.5</priority>
         </url>
   </urlset>
