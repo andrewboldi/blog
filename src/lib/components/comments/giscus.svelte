@@ -3,6 +3,7 @@
 
   import { site } from '$lib/config/site'
   import { onMount } from 'svelte'
+  import { theme } from '$lib/config/general';
 
   export let config: GiscusConfig
 
@@ -15,8 +16,7 @@
       'data-category-id': config.categoryID,
       'data-input-position': config.inputPosition ?? 'bottom',
       'data-lang': config.lang ?? site.lang ?? 'en',
-      'data-loading': config.loading ?? '',
-      'data-mapping': 'pathname',
+      'data-mapping': 'title',
       'data-reactions-enabled': config.reactionsEnabled === false ? '0' : '1',
       'data-repo': config.repo,
       'data-repo-id': config.repoID,
@@ -34,9 +34,13 @@
       document.getElementById('giscus-container')!.appendChild(giscus)
     }, 1000)
   })
+
+    function changeGiscusTheme () {
+  }
 </script>
 
 <div id='giscus-container'>
   <button class='btn btn-lg flex mx-auto my-4 btn-ghost btn-circle loading' id='giscus-loading' />
   <div class='giscus' id='giscus' />
 </div>
+

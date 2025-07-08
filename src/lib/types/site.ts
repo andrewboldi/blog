@@ -5,10 +5,10 @@ export interface SiteConfig {
     bio?: string
     metadata?: (
       | {
-          text?: string
           icon: string
           link?: string
           rel?: string
+          text?: string
         }
       | {
         icon?: string

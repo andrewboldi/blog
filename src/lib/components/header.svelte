@@ -7,10 +7,13 @@
   import { title as storedTitle } from '$lib/stores/title'
   import { hslToHex } from '$lib/utils/color'
   import { fly } from 'svelte/transition'
+  import Giscus from './comments/giscus.svelte';
 
   export let path: string
   let title: string
   let currentTheme: string
+  let giscusTheme: string
+  let iframe: Element | null
   let currentThemeColor: string
   let search: boolean = false
   let pin: boolean = true
@@ -90,9 +93,26 @@
                 class:border-2={currentTheme === name}
                 class:border-primary={currentTheme === name}
                 data-theme={name}
+
                 on:click={() => {
                   currentTheme = name
                   localStorage.setItem('theme', name)
+
+                  iframe = document.querySelector('iframe.giscus-frame');
+
+                  /*
+                  switch (localStorage.getItem('theme')) {
+                    case "dracula":
+                      giscusTheme = "dark"
+                    case "cymk":
+                      giscusTheme = "light"
+                  }
+
+                  assert(iframe !== null, "bruh")
+                   if (!iframe?.classList.contains("giscus-frame--loading")) {
+                    iframe?.contentWindow?.postMessage({ giscus: {setConfig: {theme: giscusTheme}}}, 'https://giscus.app')
+                  }
+                  */
                 }}>
                 <p class='flex-1 text-left text-base-content group-hover:text-primary-content transition-color'>
                   {text ?? name}
